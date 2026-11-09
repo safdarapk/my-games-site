@@ -5,577 +5,179 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090d18">
-  <title>Safdar's Games | Play Online</title>
-  <meta name="description" content="Explore online games on Safdar's Games. Review game rules and play responsibly.">
+  <meta name="description" content="Browse third-party gaming platforms. Check their terms and local laws, and play responsibly.">
+  <title>Safdar's Games | Platform Directory</title>
   <style>
     :root {
       color-scheme: dark;
       --bg: #090d18;
-      --bg-soft: #101827;
-      --panel: rgba(19, 27, 48, 0.9);
-      --panel-strong: rgba(14, 22, 39, 0.98);
-      --panel-light: rgba(29, 41, 68, 0.9);
-      --card: rgba(18, 25, 38, 0.9);
-      --line: rgba(154, 173, 216, 0.18);
+      --panel: #121b2d;
+      --line: rgba(167, 185, 225, .18);
       --text: #edf4ff;
       --muted: #aab7d0;
-      --primary: #7cf7c8;
-      --primary-strong: #59e0ad;
-      --accent: #9a8cff;
+      --mint: #7cf7c8;
+      --purple: #a99bff;
       --warning: #ffd789;
-      --shadow: 0 30px 80px rgba(10, 15, 30, 0.55);
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
+      color: var(--text);
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
       background:
-        radial-gradient(circle at top, rgba(154, 140, 255, 0.18), transparent 34%),
-        radial-gradient(circle at right, rgba(124, 247, 200, 0.12), transparent 28%),
+        radial-gradient(ellipse at 12% 0%, rgba(128, 104, 255, .18), transparent 38%),
+        radial-gradient(ellipse at 95% 16%, rgba(83, 237, 187, .11), transparent 30%),
         var(--bg);
-      color: var(--text);
-      font-family: Inter, "Segoe UI", sans-serif;
     }
-
     a { color: inherit; }
-
-    .container {
-      width: min(1180px, calc(100% - 32px));
-      margin: 0 auto;
+    .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    .header { border-bottom: 1px solid var(--line); background: rgba(9, 13, 24, .78); }
+    .nav { min-height: 76px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 11px; font-size: 1.05rem; font-weight: 800; text-decoration: none; }
+    .brand-icon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 13px; background: linear-gradient(135deg, var(--mint), #75caff); color: #07130d; }
+    .nav a:last-child { color: var(--muted); text-decoration: none; }
+    .hero { padding: 72px 0 42px; }
+    .eyebrow { color: var(--mint); font-size: .78rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    h1 { max-width: 760px; margin: 12px 0; font-size: clamp(2.5rem, 7vw, 4.7rem); line-height: 1; letter-spacing: -.055em; }
+    .intro { max-width: 720px; margin: 0; color: var(--muted); font-size: 1.05rem; line-height: 1.75; }
+    .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin: 16px 0 22px; }
+    .section-heading h2 { margin: 0; font-size: clamp(1.7rem, 4vw, 2.2rem); letter-spacing: -.04em; }
+    .section-heading p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .games-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .game-card {
+      display: flex; flex-direction: column; min-height: 220px; padding: 22px;
+      border: 1px solid var(--line); border-radius: 20px;
+      background: linear-gradient(150deg, rgba(24, 35, 57, .96), rgba(13, 20, 34, .96));
+      box-shadow: 0 18px 46px rgba(0, 0, 0, .18);
     }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(14px);
-      background: rgba(9, 13, 24, 0.7);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 80px;
-      gap: 20px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      font-size: 1.08rem;
-      font-weight: 800;
-      letter-spacing: 0.02em;
-    }
-
-    .brand-badge {
-      display: grid;
-      place-items: center;
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--primary), #4ea7ff);
-      color: #03150d;
-      box-shadow: 0 15px 30px rgba(124, 247, 200, .25);
-      font-size: 1.2rem;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      transition: opacity .2s ease, color .2s ease;
-    }
-
-    .nav-links a:hover { color: var(--text); }
-
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 18px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--primary), #6bd8ff);
-      color: #051008;
-      font-weight: 800;
-      text-decoration: none;
-      box-shadow: 0 10px 30px rgba(91, 209, 167, 0.22);
-    }
-
-    .hero {
-      padding: 76px 0 46px;
-    }
-
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 34px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(154, 140, 255, 0.1);
-      color: #d7cffd;
-      font-weight: 700;
-      font-size: 0.75rem;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 18px 0 16px;
-      font-size: clamp(2.7rem, 8vw, 5rem);
-      line-height: 0.98;
-      letter-spacing: -0.06em;
-    }
-
-    .lead {
-      max-width: 620px;
-      margin: 0;
-      color: var(--muted);
-      font-size: 1.08rem;
-      line-height: 1.75;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-top: 28px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 0 20px;
-      border-radius: 14px;
-      border: 1px solid transparent;
-      font-weight: 800;
-      text-decoration: none;
-      transition: transform .2s ease, border-color .2s ease, background .2s ease;
-    }
-
-    .btn:hover { transform: translateY(-2px); }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), #78d8ff);
-      color: #07110b;
-      box-shadow: 0 16px 36px rgba(124, 247, 200, 0.2);
-    }
-
-    .btn-secondary {
-      border-color: var(--line);
-      background: rgba(255, 255, 255, 0.02);
-      color: var(--text);
-    }
-
-    .hero-stats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-top: 26px;
-    }
-
-    .stat {
-      min-width: 140px;
-      padding: 14px 16px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.15rem;
-      margin-bottom: 4px;
-    }
-
-    .stat span { color: var(--muted); font-size: 0.82rem; }
-
-    .hero-panel {
-      position: relative;
-      padding: 26px;
-      border: 1px solid var(--line);
-      border-radius: 26px;
-      background: linear-gradient(145deg, rgba(20, 28, 47, 0.96), rgba(12, 18, 32, 0.92));
-      box-shadow: var(--shadow);
-    }
-
-    .mini-label {
-      color: var(--muted);
-      font-size: 0.76rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .featured-card {
-      margin-top: 18px;
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      background: linear-gradient(145deg, rgba(44, 58, 92, 0.9), rgba(22, 31, 49, 0.8));
-    }
-
-    .featured-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 12px;
-    }
-
-    .featured-game {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-    }
-
-    .featured-icon {
-      display: grid;
-      place-items: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      background: rgba(124, 247, 200, 0.12);
-      font-size: 1.4rem;
-    }
-
-    .live-pill {
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(82, 255, 163, 0.1);
-      border: 1px solid rgba(82, 255, 163, 0.2);
-      color: var(--primary);
-      font-size: 0.72rem;
-      font-weight: 700;
-    }
-
-    .featured-card h3 {
-      margin: 0 0 6px 0;
-      font-size: 1.7rem;
-      letter-spacing: -0.04em;
-    }
-
-    .featured-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .featured-price {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-top: 18px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-    }
-
-    .featured-price strong {
-      display: block;
-      margin-bottom: 3px;
-      font-size: 1.7rem;
-      letter-spacing: -0.04em;
-    }
-
-    .featured-price span {
-      color: var(--muted);
-      font-size: 0.8rem;
-    }
-
-    .featured-card .btn {
-      min-width: 150px;
-    }
-
-    section { padding: 24px 0 44px; }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 22px;
-    }
-
-    .section-title {
-      margin: 0;
-      font-size: clamp(1.8rem, 4vw, 2.4rem);
-      letter-spacing: -0.04em;
-    }
-
-    .section-copy { color: var(--muted); }
-
-    .games-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .game-box {
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: linear-gradient(180deg, rgba(21, 29, 49, 0.9), rgba(11, 17, 29, 0.9));
-      box-shadow: 0 18px 50px rgba(6, 9, 16, 0.18);
-    }
-
-    .game-emoji {
-      display: grid;
-      place-items: center;
-      width: 62px;
-      height: 62px;
-      border-radius: 18px;
-      margin-bottom: 18px;
-      font-size: 2rem;
-      background: rgba(154, 140, 255, 0.12);
-    }
-
-    .game-box h3 {
-      margin: 0 0 8px;
-      font-size: 1.35rem;
-      letter-spacing: -0.03em;
-    }
-
-    .game-box p {
-      margin: 0 0 18px;
-      color: var(--muted);
-      line-height: 1.7;
-      min-height: 92px;
-    }
-
-    .game-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding-top: 14px;
-      border-top: 1px solid var(--line);
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(124, 247, 200, 0.08);
-      color: var(--primary);
-      font-size: 0.76rem;
-      font-weight: 700;
-    }
-
-    .game-box .btn { min-width: 120px; }
-
-    .notice-box {
-      margin-top: 18px;
-      padding: 22px 24px;
-      border: 1px solid rgba(255, 215, 137, 0.24);
-      border-radius: 20px;
-      background: rgba(255, 215, 137, 0.06);
-      color: #f7e7be;
-      line-height: 1.8;
-    }
-
-    .notice-box strong { color: var(--warning); }
-
-    .site-footer {
-      padding: 20px 0 42px;
-      color: var(--muted);
-      border-top: 1px solid var(--line);
-      text-align: center;
-      font-size: 0.88rem;
-    }
-
-    @media (max-width: 980px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .games-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 680px) {
-      .nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 14px 0;
-      }
-
-      .nav-links {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .games-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 52px;
-      }
-
-      .featured-price {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .featured-card .btn,
-      .game-box .btn {
-        width: 100%;
-      }
+    .card-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .game-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 15px; background: rgba(169, 155, 255, .13); font-size: 1.45rem; }
+    .platform-label { color: var(--muted); font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    .game-card h3 { margin: 19px 0 8px; font-size: 1.28rem; letter-spacing: -.025em; }
+    .game-card p { margin: 0 0 20px; color: var(--muted); font-size: .9rem; line-height: 1.6; }
+    .game-card .button { margin-top: auto; }
+    .button { display: inline-flex; min-height: 46px; justify-content: center; align-items: center; padding: 0 17px; border-radius: 12px; background: linear-gradient(135deg, var(--mint), #78d8ff); color: #07130d; font-weight: 800; text-decoration: none; transition: transform .18s ease, filter .18s ease; }
+    .button:hover { transform: translateY(-2px); filter: brightness(1.06); }
+    .notice { margin: 30px 0 48px; padding: 22px 24px; border: 1px solid rgba(255, 215, 137, .28); border-radius: 18px; background: rgba(255, 215, 137, .07); color: #f7e7be; line-height: 1.75; }
+    .notice strong { color: var(--warning); }
+    .footer { padding: 24px 0 38px; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font-size: .85rem; line-height: 1.7; }
+    @media (max-width: 820px) { .games-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 560px) {
+      .nav { min-height: 68px; }
+      .hero { padding-top: 52px; }
+      .games-grid { grid-template-columns: 1fr; }
+      .game-card { min-height: 205px; }
+      .section-heading { align-items: start; flex-direction: column; }
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
+  <header class="header">
     <div class="container nav">
-      <a class="brand" href="./" aria-label="Safdar's Games home page">
-        <span class="brand-badge" aria-hidden="true">🎮</span>
+      <a class="brand" href="./" aria-label="Safdar's Games home">
+        <span class="brand-icon" aria-hidden="true">🎮</span>
         <span>Safdar's Games</span>
       </a>
-
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#games">Games</a>
-        <a href="#featured">Featured</a>
-        <a href="#about">About</a>
-      </nav>
-
-      <a class="nav-cta" href="http://www.59winpkr.com/?r=fsw7442" target="_blank" rel="sponsored noopener noreferrer">Play Now</a>
+      <a href="#platforms">Browse platforms ↓</a>
     </div>
   </header>
 
-  <main id="home" class="container">
+  <main class="container">
     <section class="hero">
-      <div class="hero-inner">
-        <div>
-          <div class="eyebrow">New &amp; trending</div>
-          <h1>Play more. Win smarter.</h1>
-          <p class="lead">Discover a clean, modern platform for online game browsing, quick access, and a smoother experience. Review the provider's rules, terms, and local laws before you play.</p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="http://www.59winpkr.com/?r=fsw7442" target="_blank" rel="sponsored noopener noreferrer">Play Game</a>
-            <a class="btn btn-secondary" href="#games">Browse Games</a>
-          </div>
-
-          <div class="hero-stats" aria-label="Highlights">
-            <div class="stat">
-              <strong>3+</strong>
-              <span>Game picks</span>
-            </div>
-            <div class="stat">
-              <strong>Fast</strong>
-              <span>Instant access</span>
-            </div>
-            <div class="stat">
-              <strong>Safe</strong>
-              <span>Responsible play</span>
-            </div>
-          </div>
-        </div>
-
-        <aside class="hero-panel" id="featured" aria-label="Featured game panel">
-          <div class="mini-label">Featured</div>
-
-          <div class="featured-card">
-            <div class="featured-top">
-              <div class="featured-game">
-                <span class="featured-icon" aria-hidden="true">🎯</span>
-                <span>Featured Game</span>
-              </div>
-              <span class="live-pill">Live</span>
-            </div>
-
-            <h3>Lucky Spin</h3>
-            <p>Quick, simple, and built for fast access. Open the provider site and follow their instructions before playing.</p>
-
-            <div class="featured-price">
-              <div>
-                <strong>Play</strong>
-                <span>Instant access</span>
-              </div>
-
-              <a class="btn btn-primary" href="http://www.59winpkr.com/?r=fsw7442" target="_blank" rel="sponsored noopener noreferrer">Open</a>
-            </div>
-          </div>
-        </aside>
-      </div>
+      <div class="eyebrow">Platform directory</div>
+      <h1>Explore online gaming platforms.</h1>
+      <p class="intro">Browse the platforms below and visit their official sites for current details. These are third-party services; review their terms, privacy policies, and local laws before using them.</p>
     </section>
 
-    <section id="games">
-      <div class="section-head">
-        <div>
-          <p class="mini-label">Popular picks</p>
-          <h2 class="section-title">Top games</h2>
-        </div>
-        <div class="section-copy">Hand-picked options with quick access</div>
+    <section id="platforms" aria-labelledby="platforms-title">
+      <div class="section-heading">
+        <h2 id="platforms-title">Available platforms</h2>
+        <p>10 platform links</p>
       </div>
 
       <div class="games-grid">
-        <article class="game-box">
-          <div class="game-emoji" aria-hidden="true">🎯</div>
-          <h3>Lucky Spin</h3>
-          <p>Fast gameplay with a simple interface and quick access to provider rules. Review the terms carefully before you start.</p>
-          <div class="game-meta">
-            <span class="tag">New</span>
-            <a class="btn btn-secondary" href="http://www.59winpkr.com/?r=fsw7442" target="_blank" rel="sponsored noopener noreferrer">Play</a>
-          </div>
+        <article class="game-card">
+          <div class="card-top"><span class="game-icon" aria-hidden="true">🎮</span><span class="platform-label">Platform 01</span></div>
+          <h3>Y999 Game</h3>
+          <p>Open the provider site to review its games, terms, and eligibility requirements.</p>
+          <a class="button" href="https://www.44y999.com/?dl=ghef53" target="_blank" rel="sponsored noopener noreferrer" aria-label="Visit Y999 Game (opens in a new tab)">Visit Y999</a>
         </article>
 
-        <article class="game-box">
-          <div class="game-emoji" aria-hidden="true">🎲</div>
-          <h3>Lucky Wheel</h3>
-          <p>Quick rounds and easy-to-follow gameplay. Open the provider site and check the official rules before participating.</p>
-          <div class="game-meta">
-            <span class="tag">Hot</span>
-            <a class="btn btn-secondary" href="http://www.59winpkr.com/?r=fsw7442" target="_blank" rel="sponsored noopener noreferrer">Play</a>
-          </div>
+        <article class="game-card">
+          <div class="card-top"><span class="game-icon" aria-hidden="true">🕹️</span><span class="platform-label">Platform 02</span></div>
+          <h3>WinPKR Game</h3>
+          <p>Open the provider site to review its games, terms, and eligibility requirements.</p>
+          <a class="button" href="http://www.59winpkr.com/?r=fsw7442" target="_blank" rel="sponsored noopener noreferrer" aria-label="Visit WinPKR Game (opens in a new tab)">Visit WinPKR</a>
         </article>
 
-        <article class="game-box">
-          <div class="game-emoji" aria-hidden="true">🏆</div>
-          <h3>Daily Match</h3>
-          <p>Simple match-based gameplay with a modern feel. Always review the provider's terms, age rules, and privacy policies.</p>
-          <div class="game-meta">
-            <span class="tag">Popular</span>
-            <a class="btn btn-secondary" href="http://www.59winpkr.com/?r=fsw7442" target="_blank" rel="sponsored noopener noreferrer">Play</a>
-          </div>
+        <article class="game-card">
+          <div class="card-top"><span class="game-icon" aria-hidden="true">🎰</span><span class="platform-label">Platform 03</span></div>
+          <h3>Royal X Casino</h3>
+          <p>Open the provider site to review its games, terms, and eligibility requirements.</p>
+          <a class="button" href="https://paisaxx888.cc?refer_id=101219422820" target="_blank" rel="sponsored noopener noreferrer" aria-label="Visit Royal X Casino (opens in a new tab)">Visit Royal X</a>
         </article>
-      </div>
 
-      <div id="about" class="notice-box">
-        <strong>Important:</strong> This website provides a gateway to a third-party game provider. Review their full terms, privacy notice, and local legal rules before using the service. Real-money play may involve risk and is not guaranteed to produce winnings.
+        <article class="game-card">
+          <div class="card-top"><span class="game-icon" aria-hidden="true">🎮</span><span class="platform-label">Platform 04</span></div>
+          <h3>JJ77 Game</h3>
+          <p>Open the provider site to review its games, terms, and eligibility requirements.</p>
+          <a class="button" href="https://www.jj77.ltd/?dl=5ioygv" target="_blank" rel="sponsored noopener noreferrer" aria-label="Visit JJ77 Game (opens in a new tab)">Visit JJ77</a>
+        </article>
+
+        <article class="game-card">
+          <div class="card-top"><span class="game-icon" aria-hidden="true">🕹️</span><span class="platform-label">Platform 05</span></div>
+          <h3>CT777 Game</h3>
+          <p>Open the provider site to review its games, terms, and eligibility requirements.</p>
+          <a class="button" href="https://www.ct777.co/?id=371811214" target="_blank" rel="sponsored noopener noreferrer" aria-label="Visit CT777 Game (opens in a new tab)">Visit CT777</a>
+        </article>
+
+        <article class="game-card">
+          <div class="card-top"><span class="game-icon" aria-hidden="true">🎯</span><span class="platform-label">Platform 06</span></div>
+          <h3>X99 Game</h3>
+          <p>Open the provider site to review its games, terms, and eligibility requirements.</p>
+          <a class="button" href="https://www.x99.life/?dl=cjsyxj" target="_blank" rel="sponsored noopener noreferrer" aria-label="Visit X99 Game (opens in a new tab)">Visit X99</a>
+        </article>
+
+        <article class="game-card">
+          <div class="card-top"><span class="game-icon" aria-hidden="true">🎲</span><span class="platform-label">Platform 07</span></div>
+          <h3>M999 Game</h3>
+          <p>Open the provider site to review its games, terms, and eligibility requirements.</p>
+          <a class="button" href="https://m999s.com/?id=111890549" target="_blank" rel="sponsored noopener noreferrer" aria-label="Visit M999 Game (opens in a new tab)">Visit M999</a>
+        </article>
+
+        <article class="game-card">
+          <div class="card-top"><span class="game-icon" aria-hidden="true">🏆</span><span class="platform-label">Platform 08</span></div>
+          <h3>ZS777 Game</h3>
+          <p>Open the provider site to review its games, terms, and eligibility requirements.</p>
+          <a class="button" href="https://www.zs777.bet/?id=358827805" target="_blank" rel="sponsored noopener noreferrer" aria-label="Visit ZS777 Game (opens in a new tab)">Visit ZS777</a>
+        </article>
+
+        <article class="game-card">
+          <div class="card-top"><span class="game-icon" aria-hidden="true">✨</span><span class="platform-label">Platform 09</span></div>
+          <h3>ZS999 Game</h3>
+          <p>Open the provider site to review its games, terms, and eligibility requirements.</p>
+          <a class="button" href="https://zs999.win/?id=215295239" target="_blank" rel="sponsored noopener noreferrer" aria-label="Visit ZS999 Game (opens in a new tab)">Visit ZS999</a>
+        </article>
+
+        <article class="game-card">
+          <div class="card-top"><span class="game-icon" aria-hidden="true">⚡</span><span class="platform-label">Platform 10</span></div>
+          <h3>Z7 Game</h3>
+          <p>Open the provider site to review its games, terms, and eligibility requirements.</p>
+          <a class="button" href="https://www.z7fun.net/?dl=90ihxy" target="_blank" rel="sponsored noopener noreferrer" aria-label="Visit Z7 Game (opens in a new tab)">Visit Z7</a>
+        </article>
       </div>
     </section>
+
+    <aside class="notice" aria-label="Important responsible play notice">
+      <strong>Important notice:</strong> These links lead to third-party platforms. Some may involve gambling or real-money play. Participation is only for adults who meet the provider's age requirements and where it is legal. You can lose money; winnings or income are not guaranteed. Please review each provider's terms and play responsibly. Some links may be referral links, which could earn this site a commission at no extra cost to you.
+    </aside>
   </main>
 
-  <footer class="site-footer">
-    © 2026 Safdar's Games · Play responsibly · Terms vary by provider
+  <footer class="footer">
+    © 2026 Safdar's Games · Independent directory; not affiliated with the listed providers.<br>
+    Play responsibly. Check local laws and provider terms before visiting.
   </footer>
 </body>
 </html>
