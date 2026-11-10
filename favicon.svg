@@ -1,12 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
-  <title>Gaming Arena</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Gaming Arena favicon</title>
+  <desc id="desc">Dark purple background with gold gaming emblem.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#78f0c2"/>
-      <stop offset="1" stop-color="#72d3ff"/>
+      <stop offset="0" stop-color="#211933"/>
+      <stop offset="1" stop-color="#0c1222"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8e6ad"/>
+      <stop offset="1" stop-color="#d7aa4c"/>
     </linearGradient>
   </defs>
-  <rect width="512" height="512" rx="120" fill="url(#bg)"/>
-  <path d="M151 176h210c42 0 77 28 88 68l24 82c13 45-39 79-76 50l-57-44H172l-57 44c-37 29-89-5-76-50l24-82c11-40 46-68 88-68Z" fill="#101a2b"/>
-  <path d="M169 224v78m-39-39h78m145-18h2m39 36h2" fill="none" stroke="#78f0c2" stroke-linecap="round" stroke-width="22"/>
+  <rect width="512" height="512" rx="110" fill="url(#bg)"/>
+  <path d="M145 158h222c52 0 94 42 94 94v26c0 52-42 94-94 94H145c-52 0-94-42-94-94v-26c0-52 42-94 94-94Z" fill="#101a2b" stroke="#f1d38b" stroke-width="10"/>
+  <path d="M171 226h170c31 0 56 25 56 56v12c0 31-25 56-56 56H171c-31 0-56-25-56-56v-12c0-31 25-56 56-56Z" fill="url(#gold)"/>
+  <path d="M188 253v52m-26-26h52M286 253h54m-27-27v54" stroke="#151b29" stroke-width="16" stroke-linecap="round"/>
+  <path d="M214 360h86" stroke="#f7f3d6" stroke-width="11" stroke-linecap="round"/>
 </svg>
