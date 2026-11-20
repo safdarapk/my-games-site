@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a2b">
+  <title>Six Game Platform Guide – Features, Download & Safety Overview</title>
+  <meta name="description" content="Explore the Six Game platform guide, key features, APK access details, safety considerations, and answers to frequently asked questions before getting started.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://safdarapk.github.io/my-games-site/games/six-game.html">
+
+  <meta property="og:title" content="Six Game Platform Guide – Features & Overview">
+  <meta property="og:description" content="Read general information about Six Game, what to check before downloading, safety tips, and common FAQs.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://safdarapk.github.io/my-games-site/games/six-game.html">
+  <meta property="og:image" content="https://safdarapk.github.io/my-games-site/games/images/six-game.jpg">
+
+  <link rel="icon" type="image/svg+xml" href="/my-games-site/favicon.svg">
+  <style>
+    :root {
+      --bg: #090d18;
+      --panel: #121a2a;
+      --card: #162136;
+      --line: rgba(224, 190, 105, 0.24);
+      --text: #fff8e9;
+      --muted: #c2b9a7;
+      --gold: #e5c16e;
+      --gold-light: #fff0b8;
+      --shadow: 0 20px 55px rgba(0, 0, 0, 0.4);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top, #17233b 0%, var(--bg) 62%);
+      line-height: 1.65;
+    }
+    .container {
+      width: min(1040px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(9, 13, 24, 0.88);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 12px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 15px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+    .back-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+    .hero {
+      margin-top: 26px;
+      padding: clamp(28px, 5vw, 48px) clamp(20px, 4vw, 42px);
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(22, 33, 54, 0.95), rgba(14, 21, 36, 0.98));
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(229, 193, 110, 0.08);
+      color: var(--gold);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      margin: 16px 0 12px;
+      font-size: clamp(2rem, 4.8vw, 3.25rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .hero-lead {
+      max-width: 720px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+    .hero-media {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin-top: 8px;
+    }
+    .game-logo-box {
+      width: 170px;
+      height: 170px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #232428;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .game-logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 30px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #f3d27a, #dca944);
+      color: #16120a;
+      font-weight: 800;
+      font-size: 1.02rem;
+      text-decoration: none;
+      box-shadow: 0 10px 28px rgba(229, 193, 110, 0.28);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(229, 193, 110, 0.38);
+    }
+    .jump-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 22px 0 30px;
+    }
+    .jump-nav a {
+      padding: 8px 15px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(18, 26, 42, 0.85);
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .jump-nav a:hover {
+      border-color: var(--gold);
+      color: var(--text);
+    }
+    .content-grid {
+      display: grid;
+      gap: 20px;
+      margin-bottom: 44px;
+    }
+    .section-card {
+      padding: clamp(20px, 3vw, 30px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: var(--panel);
+    }
+    .section-card h2 {
+      margin: 0 0 12px;
+      font-size: 1.4rem;
+      color: var(--gold-light);
+    }
+    .section-card p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+    .section-card p:last-child {
+      margin-bottom: 0;
+    }
+    .feature-list {
+      margin: 12px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+    .feature-list li {
+      margin-bottom: 8px;
+    }
+    .meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .meta-table th,
+    .meta-table td {
+      padding: 11px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: left;
+      font-size: 0.95rem;
+    }
+    .meta-table th {
+      color: var(--text);
+      width: 34%;
+    }
+    .meta-table td {
+      color: var(--muted);
+    }
+    details {
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 12px;
+      padding: 13px 16px;
+      margin-top: 10px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text);
+    }
+    details p {
+      margin-top: 10px;
+    }
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .related-links a {
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      color: var(--gold-light);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 24px 0 36px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Six Game?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Six Game is an online mobile gaming platform featuring casual and card-style mini-games designed for Android users."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can users access the Six Game APK?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Users can visit the official Six Game download page through the direct listing button above and review installation requirements before proceeding."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should users check before installing third-party APKs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Always verify the source domain, review app permissions, check local eligibility rules, and read the platform's terms before registering."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <a class="brand" href="../index.html">🎮 Gaming Arena</a>
+      <a class="back-btn" href="../index.html">← Back to directory</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="eyebrow">Independent Platform Guide</span>
+      <h1>Six Game Platform Guide</h1>
+      <p class="hero-lead">
+        Explore general information about the Six Game listing, key platform highlights, important details to verify before installation, and answers to common user questions.
+      </p>
+
+      <div class="hero-media">
+        <div class="game-logo-box">
+          <img src="images/six-game.jpg" alt="Six Game Official Logo" width="170" height="170" loading="eager">
+        </div>
+        <a class="cta-btn" href="https://sixgameapp.net/?dl=dgnjsi" target="_blank" rel="nofollow noopener noreferrer">
+          Download Six Game APK
+        </a>
+      </div>
+    </section>
+
+    <nav class="jump-nav" aria-label="Page sections">
+      <a href="#introduction">Introduction</a>
+      <a href="#what-is-six-game">What is Six Game?</a>
+      <a href="#overview-table">Quick Overview</a>
+      <a href="#what-to-review">What to Review</a>
+      <a href="#safety-guide">Safety Guide</a>
+      <a href="#faqs">FAQs</a>
+    </nav>
+
+    <div class="content-grid">
+      <article class="section-card" id="introduction">
+        <h2>Introduction</h2>
+        <p>
+          Six Game has gained attention among mobile users looking for quick-access casual and card-inspired entertainment apps. Because third-party gaming platforms operate outside standard app stores, reviewing accurate setup details and platform rules first helps users make informed decisions.
+        </p>
+        <p>
+          This independent guide outlines how the Six Game listing works, what device checks to complete before downloading, and essential precautions to keep in mind.
+        </p>
+      </article>
+
+      <article class="section-card" id="what-is-six-game">
+        <h2>What is Six Game?</h2>
+        <p>
+          Six Game (also searched as Six.game) is a mobile-focused gaming portal offering lightweight arcade, card, and quick-round digital games optimized for Android smartphones.
+        </p>
+        <ul class="feature-list">
+          <li><strong>Mobile-First Interface:</strong> Built for fast navigation on standard Android devices without heavy storage requirements.</li>
+          <li><strong>Multiple Game Modes:</strong> Brings together short-session card and casual mini-games inside a single dashboard.</li>
+          <li><strong>Direct Web Distribution:</strong> Distributed via an external APK download link rather than traditional mobile app marketplaces.</li>
+        </ul>
+      </article>
+
+      <article class="section-card" id="overview-table">
+        <h2>Quick Platform Overview</h2>
+        <table class="meta-table">
+          <tbody>
+            <tr>
+              <th>Platform Name</th>
+              <td>Six Game (Six.game)</td>
+            </tr>
+            <tr>
+              <th>Category</th>
+              <td>Casual &amp; Card-Style Mobile Gaming</td>
+            </tr>
+            <tr>
+              <th>Supported Device</th>
+              <td>Android Smartphones (APK Installation)</td>
+            </tr>
+            <tr>
+              <th>Access Method</th>
+              <td>Official External Download Portal</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="section-card" id="what-to-review">
+        <h2>What to Review Before Downloading</h2>
+        <p>
+          Before installing any external APK package on your device, take a moment to check the following details:
+        </p>
+        <ul class="feature-list">
+          <li><strong>Domain Verification:</strong> Confirm that the download page loads properly and matches the official destination link.</li>
+          <li><strong>Storage &amp; OS Compatibility:</strong> Ensure your Android phone has enough free space and updated security patches.</li>
+          <li><strong>Terms &amp; Eligibility:</strong> Read the platform's age requirements, regional availability, and account policies before signing up.</li>
+        </ul>
+      </article>
+
+      <article class="section-card" id="safety-guide">
+        <h2>Safety &amp; Responsible Use Guide</h2>
+        <p>
+          We are an independent directory and do not own or operate Six Game. Always protect your device and personal information when using third-party gaming apps:
+        </p>
+        <ul class="feature-list">
+          <li>Never share account passwords, OTP codes, or sensitive personal credentials with unverified contacts.</li>
+          <li>Review app permissions during installation and disable unnecessary access if not required for gameplay.</li>
+          <li>Follow local laws and set personal time and spending boundaries when participating in online gaming platforms.</li>
+        </ul>
+      </article>
+
+      <article class="section-card" id="faqs">
+        <h2>Frequently Asked Questions</h2>
+        <details>
+          <summary>How do I download Six Game on Android?</summary>
+          <p>Click the "Download Six Game APK" button at the top of this page to visit the external download portal, then follow the on-screen Android installation instructions.</p>
+        </details>
+        <details>
+          <summary>Is Gaming Arena the official owner of Six Game?</summary>
+          <p>No. Gaming Arena is an informational directory providing independent guides and listing overviews for third-party gaming platforms.</p>
+        </details>
+        <details>
+          <summary>What should I check if the APK does not install?</summary>
+          <p>Verify that you have sufficient device storage, a stable internet connection, and permission enabled for installing apps from trusted browser sources.</p>
+        </details>
+      </article>
+
+      <article class="section-card">
+        <h2>Explore More Platform Guides</h2>
+        <p>Browse other verified directory pages on Gaming Arena:</p>
+        <div class="related-links">
+          <a href="royal-x.html">Royal X Guide</a>
+          <a href="y999.html">Y999 Guide</a>
+          <a href="winpkr.html">WinPKR Guide</a>
+          <a href="../index.html">All Games Directory</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Gaming Arena — Independent Gaming Platform Directory. Please review each provider's terms and local regulations before use.</p>
+    </div>
+  </footer>
+</body>
+</html>
